@@ -1,0 +1,4 @@
+bts\sio\magicien\database\InitConnexion.class
+bts\sio\magicien\JakartaRestConfiguration.class
+bts\sio\magicien\database\ConnexionBdd.class
+bts\sio\magicien\resources\JakartaEE10Resource.class
