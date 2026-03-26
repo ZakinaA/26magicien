@@ -1,4 +1,4 @@
-package bts.sio.sdis.model;
+package bts.sio.magicien.model;
 
 /**
  * Classe représentant un engin de secours (FPT, VSAV, EPA, etc.).

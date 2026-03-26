@@ -1,4 +1,4 @@
-package bts.sio.sdis.model;
+package bts.sio.magicien.model;
 
 /**
  * Classe représentant le grade d'un pompier.

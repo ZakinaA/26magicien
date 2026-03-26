@@ -1,4 +1,4 @@
-package bts.sio.sdis.model;
+package bts.sio.magicien.model;
 
 import java.util.ArrayList;
 import java.util.List;

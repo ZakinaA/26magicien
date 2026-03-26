@@ -1,4 +1,4 @@
-package bts.sio.sdis.model;
+package bts.sio.magicien.model;
 
 /**
  * Classe représentant un type d'engin (FPT, VSAV, EPA, VSR, VLHR).
