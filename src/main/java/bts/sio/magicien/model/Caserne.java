@@ -20,11 +20,11 @@ public class Caserne {
 
     // Relations
     private int idEngin; // engin de référence (FK dans le schéma)
-    private List<Engin> engins;
+    
     private List<Pompier> pompiers;
 
     public Caserne() {
-        this.engins = new ArrayList<>();
+        
         this.pompiers = new ArrayList<>();
     }
 
@@ -59,8 +59,7 @@ public class Caserne {
     public int getIdEngin() { return idEngin; }
     public void setIdEngin(int idEngin) { this.idEngin = idEngin; }
 
-    public List<Engin> getEngins() { return engins; }
-    public void setEngins(List<Engin> engins) { this.engins = engins; }
+   
 
     public List<Pompier> getPompiers() { return pompiers; }
     public void setPompiers(List<Pompier> pompiers) { this.pompiers = pompiers; }

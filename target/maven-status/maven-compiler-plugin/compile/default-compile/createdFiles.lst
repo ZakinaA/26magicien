@@ -1,4 +1,11 @@
-bts\sio\magicien\database\InitConnexion.class
+bts\sio\sdis\model\Intervention.class
+bts\sio\sdis\model\Pompier.class
 bts\sio\magicien\JakartaRestConfiguration.class
-bts\sio\magicien\database\ConnexionBdd.class
+bts\sio\sdis\model\Engin.class
+bts\sio\sdis\model\TypeEngin.class
+bts\sio\sdis\model\Fonction.class
+bts\sio\magicien\util\ConnexionBdd.class
+bts\sio\sdis\model\Caserne.class
+bts\sio\sdis\model\Grade.class
+bts\sio\sdis\model\Situation.class
 bts\sio\magicien\resources\JakartaEE10Resource.class
