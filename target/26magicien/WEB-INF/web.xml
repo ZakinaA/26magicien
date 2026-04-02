@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <display-name>26Magicien Web</display-name>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>ServletCaserne</servlet-name>
+        <servlet-class>bts.sio.magicien.servlet.ServletCaserne</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletCaserne</servlet-name>
+        <url-pattern>/ServletCaserne/listerCasernes</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PompierServlet</servlet-name>
+        <servlet-class>bts.sio.magicien.servlet.PompierServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PompierServlet</servlet-name>
+        <url-pattern>/PompierServlet/listePompiers</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+</web-app>
