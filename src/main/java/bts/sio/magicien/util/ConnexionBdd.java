@@ -6,23 +6,23 @@ import java.sql.*;
  * Classe utilitaire pour la gestion de la connexion à la base de données MariaDB.
  * Centralise l'ouverture et la fermeture des ressources JDBC.
  *
- * @author Equipe SDIS
+ * @author Equipe Magicien
  * @version 1.0
  * @since 2025-03-15
  */
 public class ConnexionBdd {
 
     // Paramètres de connexion - à adapter selon l'environnement
-    private static final String URL = "jdbc:mariadb://127.0.0.1:3307/MagicienPompier";
+    private static final String URL = "jdbc:mariadb://127.0.0.1:3307/magicienpompier";
     private static final String USER = "root";
     private static final String PASSWORD = "";
 
     static {
         try {
             Class.forName("org.mariadb.jdbc.Driver");
-            System.out.println("[SDIS] Pilote MariaDB JDBC chargé avec succès");
+            System.out.println("Pilote MariaDB JDBC chargé avec succès");
         } catch (ClassNotFoundException e) {
-            System.err.println("[SDIS] ERREUR : Pilote MariaDB introuvable !");
+            System.err.println("ERREUR : Pilote MariaDB introuvable !");
             e.printStackTrace();
         }
     }
@@ -35,7 +35,7 @@ public class ConnexionBdd {
      */
     public static Connection ouvrirConnexion() throws SQLException {
         Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
-        System.out.println("[SDIS] Connexion BDD ouverte");
+        System.out.println("Connexion BDD ouverte");
         return connection;
     }
 
@@ -46,7 +46,7 @@ public class ConnexionBdd {
         if (rs != null) {
             try { rs.close(); }
             catch (SQLException e) {
-                System.err.println("[SDIS] Erreur fermeture ResultSet : " + e.getMessage());
+                System.err.println("Erreur fermeture ResultSet : " + e.getMessage());
             }
         }
     }
@@ -58,7 +58,7 @@ public class ConnexionBdd {
         if (stmt != null) {
             try { stmt.close(); }
             catch (SQLException e) {
-                System.err.println("[SDIS] Erreur fermeture Statement : " + e.getMessage());
+                System.err.println("Erreur fermeture Statement : " + e.getMessage());
             }
         }
     }
@@ -70,9 +70,9 @@ public class ConnexionBdd {
         if (con != null) {
             try {
                 con.close();
-                System.out.println("[SDIS] Connexion BDD fermée");
+                System.out.println("Connexion BDD fermée");
             } catch (SQLException e) {
-                System.err.println("[SDIS] Erreur fermeture Connection : " + e.getMessage());
+                System.err.println("Erreur fermeture Connection : " + e.getMessage());
             }
         }
     }

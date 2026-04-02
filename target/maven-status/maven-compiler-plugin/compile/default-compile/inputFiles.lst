@@ -1,4 +1,13 @@
-E:\TS1SIO\Ali\Semestre 2\BLOC 2\ANNOUCHE\NetBEANS\26magicien\src\main\java\bts\sio\magicien\database\InitConnexion.java
+E:\TS1SIO\Ali\Semestre 2\BLOC 2\ANNOUCHE\NetBEANS\26magicien\src\main\java\bts\sio\magicien\model\TypeEngin.java
+E:\TS1SIO\Ali\Semestre 2\BLOC 2\ANNOUCHE\NetBEANS\26magicien\src\main\java\bts\sio\magicien\dao\PompierDao.java
+E:\TS1SIO\Ali\Semestre 2\BLOC 2\ANNOUCHE\NetBEANS\26magicien\src\main\java\bts\sio\magicien\model\Engin.java
+E:\TS1SIO\Ali\Semestre 2\BLOC 2\ANNOUCHE\NetBEANS\26magicien\src\main\java\bts\sio\magicien\model\Situation.java
+E:\TS1SIO\Ali\Semestre 2\BLOC 2\ANNOUCHE\NetBEANS\26magicien\src\main\java\bts\sio\magicien\model\Intervention.java
+E:\TS1SIO\Ali\Semestre 2\BLOC 2\ANNOUCHE\NetBEANS\26magicien\src\main\java\bts\sio\magicien\model\Caserne.java
 E:\TS1SIO\Ali\Semestre 2\BLOC 2\ANNOUCHE\NetBEANS\26magicien\src\main\java\bts\sio\magicien\JakartaRestConfiguration.java
+E:\TS1SIO\Ali\Semestre 2\BLOC 2\ANNOUCHE\NetBEANS\26magicien\src\main\java\bts\sio\magicien\test\Pompierdaotest.java
 E:\TS1SIO\Ali\Semestre 2\BLOC 2\ANNOUCHE\NetBEANS\26magicien\src\main\java\bts\sio\magicien\resources\JakartaEE10Resource.java
-E:\TS1SIO\Ali\Semestre 2\BLOC 2\ANNOUCHE\NetBEANS\26magicien\src\main\java\bts\sio\magicien\database\ConnexionBdd.java
+E:\TS1SIO\Ali\Semestre 2\BLOC 2\ANNOUCHE\NetBEANS\26magicien\src\main\java\bts\sio\magicien\model\Fonction.java
+E:\TS1SIO\Ali\Semestre 2\BLOC 2\ANNOUCHE\NetBEANS\26magicien\src\main\java\bts\sio\magicien\model\Pompier.java
+E:\TS1SIO\Ali\Semestre 2\BLOC 2\ANNOUCHE\NetBEANS\26magicien\src\main\java\bts\sio\magicien\util\ConnexionBdd.java
+E:\TS1SIO\Ali\Semestre 2\BLOC 2\ANNOUCHE\NetBEANS\26magicien\src\main\java\bts\sio\magicien\model\Grade.java
