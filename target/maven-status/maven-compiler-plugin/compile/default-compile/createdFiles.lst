@@ -10,4 +10,5 @@ bts\sio\magicien\resources\JakartaEE10Resource.class
 bts\sio\magicien\dao\PompierDao.class
 bts\sio\magicien\model\Fonction.class
 bts\sio\magicien\model\Situation.class
+bts\sio\magicien\servlet\PompierServlet.class
 bts\sio\magicien\model\Pompier.class
