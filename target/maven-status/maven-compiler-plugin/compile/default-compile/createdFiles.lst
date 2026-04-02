@@ -1,7 +1,15 @@
+bts\sio\magicien\test\CaserneDaoTest.class
+bts\sio\magicien\test\Pompierdaotest.class
 bts\sio\magicien\JakartaRestConfiguration.class
-bts\sio\magicien\model\Fonction.class
 bts\sio\magicien\model\Engin.class
 bts\sio\magicien\model\Caserne.class
-bts\sio\magicien\model\Pompier.class
+bts\sio\magicien\model\Intervention.class
 bts\sio\magicien\model\Grade.class
+bts\sio\magicien\util\ConnexionBdd.class
 bts\sio\magicien\model\TypeEngin.class
+bts\sio\magicien\resources\JakartaEE10Resource.class
+bts\sio\magicien\dao\PompierDao.class
+bts\sio\magicien\model\Fonction.class
+bts\sio\magicien\dao\CaserneDao.class
+bts\sio\magicien\model\Situation.class
+bts\sio\magicien\model\Pompier.class
