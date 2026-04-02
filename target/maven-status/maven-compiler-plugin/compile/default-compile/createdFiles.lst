@@ -1,6 +1,7 @@
 bts\sio\magicien\test\CaserneDaoTest.class
 bts\sio\magicien\test\Pompierdaotest.class
 bts\sio\magicien\JakartaRestConfiguration.class
+bts\sio\magicien\servlet\ServletCaserne.class
 bts\sio\magicien\model\Engin.class
 bts\sio\magicien\model\Caserne.class
 bts\sio\magicien\model\Intervention.class
