@@ -11,9 +11,15 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
-    <session-config>
-        <session-timeout>30</session-timeout>
-    </session-config>
+    <servlet>
+        <servlet-name>ServletCaserne</servlet-name>
+        <servlet-class>bts.sio.magicien.servlet.ServletCaserne</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletCaserne</servlet-name>
+        <url-pattern>/ServletCaserne/listerCasernes</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <servlet-name>PompierServlet</servlet-name>
         <servlet-class>bts.sio.magicien.servlet.PompierServlet</servlet-class>
@@ -22,4 +28,9 @@
         <servlet-name>PompierServlet</servlet-name>
         <url-pattern>/pompier</url-pattern>
     </servlet-mapping>
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
 </web-app>
