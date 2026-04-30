@@ -185,24 +185,33 @@ public class CaserneDao {
  */
 public boolean supprimerCaserne(int idCaserne) {
     Connection con = null;
-    PreparedStatement ps = null;
+    PreparedStatement psUpdate = null;
+    PreparedStatement psDelete = null;
     boolean ok = false;
 
-    String sql = "DELETE FROM caserne WHERE idCaserne = ?";
     try {
         con = ConnexionBdd.ouvrirConnexion();
-        ps = con.prepareStatement(sql);
-        ps.setInt(1, idCaserne);
         
-        // executeUpdate renvoie le nombre de lignes supprimées
-        int nbLignes = ps.executeUpdate();
+        // ÉTAPE 1 : On détache les pompiers de cette caserne
+        // (Sinon SQL bloque la suppression à cause de la clé étrangère)
+        String sqlUpdate = "UPDATE pompier SET idCaserne = NULL WHERE idCaserne = ?";
+        psUpdate = con.prepareStatement(sqlUpdate);
+        psUpdate.setInt(1, idCaserne);
+        psUpdate.executeUpdate();
+
+        // ÉTAPE 2 : Maintenant on peut supprimer la caserne
+        String sqlDelete = "DELETE FROM caserne WHERE idCaserne = ?";
+        psDelete = con.prepareStatement(sqlDelete);
+        psDelete.setInt(1, idCaserne);
+        
+        int nbLignes = psDelete.executeUpdate();
         ok = (nbLignes > 0);
         
     } catch (SQLException e) {
         System.err.println("[SDIS] Erreur supprimerCaserne : " + e.getMessage());
     } finally {
-        // On utilise ta méthode utilitaire pour bien fermer
-        ConnexionBdd.fermerTout(null, ps, con);
+        ConnexionBdd.fermer(psUpdate);
+        ConnexionBdd.fermerTout(null, psDelete, con);
     }
     return ok;
 }
