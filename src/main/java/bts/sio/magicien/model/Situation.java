@@ -10,4 +10,43 @@ package bts.sio.magicien.model;
  */
 public class Situation {
     
+    private int id;
+    private Intervention intervention;
+    private String libelle;
+    
+    public Situation(){
+        
+    }
+    
+    public Situation(int id, Intervention intervention, String libelle) {
+        this.id = id;
+        this.intervention = intervention;
+        this.libelle = libelle;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Intervention getIntervention() {
+        return intervention;
+    }
+
+    public void setIntervention(Intervention intervention) {
+        this.intervention = intervention;
+    }
+
+    public String getLibelle() {
+        return libelle;
+    }
+
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
+    }
+    
+    
 }

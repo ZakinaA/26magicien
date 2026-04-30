@@ -2,21 +2,12 @@ package bts.sio.magicien.servlet;
 
 import bts.sio.magicien.dao.PompierDao;
 import bts.sio.magicien.model.Pompier;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
 import java.util.List;
-
-/**
- * Servlet pour afficher la liste des pompiers.
- * @author Equipe Magicien
- * @version 1.0
- * @since 2025-03-15
- */
 
 public class PompierServlet extends HttpServlet {
 
@@ -31,8 +22,11 @@ public class PompierServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        // On récupère la liste typée
         List<Pompier> pompiers = pompierDao.getTousLesPompiers();
         request.setAttribute("pompiers", pompiers);
-        request.getRequestDispatcher("/WEB-INF/jsp/listePompiers.jsp").forward(request, response);
+        
+        // On pointe vers le bon fichier physique
+        request.getRequestDispatcher("/vues/pompier/listePompiers.jsp").forward(request, response);
     }
 }

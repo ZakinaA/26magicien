@@ -1,0 +1,175 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 30 avr. 2026, 10:04:36
+    Author     : ts1sio
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #1a1a1a;
+    padding: 2rem 2.5rem;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.page-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.badge-count {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 20px;
+}
+
+.red-line {
+    height: 2px;
+    background-color: #c0000a;
+    margin-bottom: 1.5rem;
+}
+
+.table-wrap {
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+thead {
+    background: #2b2b2b;
+}
+
+thead th {
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #fafafa;
+}
+
+tbody td {
+    padding: 14px 16px;
+    color: #1a1a1a;
+    vertical-align: middle;
+}
+
+td.id-col {
+    color: #1a6bbf;
+    font-weight: 600;
+}
+
+td.nom-col {
+    font-weight: 700;
+}
+
+td.prenom-col,
+td.ville-col {
+    color: #1a6bbf;
+}
+
+td.adresse-col,
+td.type-col {
+    color: #c0000a;
+    font-weight: 600;
+}
+
+td.date-col {
+    color: #888;
+    font-size: 13px;
+}
+
+td.cp-col {
+    color: #1a1a1a;
+}
+
+td.bip-col {
+    font-family: monospace;
+    font-size: 13px;
+    color: #555;
+}
+
+.btn-detail {
+    display: inline-block;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #c0000a;
+    background: transparent;
+    border: 1.5px solid #c0000a;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.12s, color 0.12s;
+}
+
+.btn-detail:hover {
+    background: #c0000a;
+    color: #fff;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 1.5rem;
+    font-size: 13px;
+    color: #888;
+    text-decoration: none;
+    padding: 7px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: all 0.12s;
+    background: #fff;
+}
+
+.back-link:hover {
+    background: #f0f0f0;
+    color: #1a1a1a;
+}
+
+.empty-row td {
+    padding: 2rem 16px;
+    color: #aaa;
+    font-style: italic;
+    text-align: center;
+}
