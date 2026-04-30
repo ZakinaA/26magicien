@@ -100,7 +100,6 @@ http://localhost:8080/26magicien/
 
 - Lister toutes les casernes
 - Consulter le détail d'une caserne avec son personnel affecté
-- Supprimer une caserne
 - Lister tous les pompiers
 
 ---
