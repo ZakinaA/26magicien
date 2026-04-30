@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <display-name>26Magicien Web</display-name>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- SERVLETS -->
+    <servlet>
+        <servlet-name>ServletCaserne</servlet-name>
+        <servlet-class>bts.sio.magicien.servlet.ServletCaserne</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConsulterPompier</servlet-name>
+        <servlet-class>bts.sio.magicien.servlet.ConsulterPompier</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PompierServlet</servlet-name>
+        <servlet-class>bts.sio.magicien.servlet.PompierServlet</servlet-class>
+    </servlet>
+
+    <!-- MAPPING CASERNES -->
+    <servlet-mapping>
+        <servlet-name>ServletCaserne</servlet-name>
+        <url-pattern>/ServletCaserne/listerCasernes</url-pattern>
+    </servlet-mapping>
+    <!-- Ajout des routes pour Consulter et Supprimer -->
+    <servlet-mapping>
+        <servlet-name>ServletCaserne</servlet-name>
+        <url-pattern>/ServletCaserne/consulterCaserne</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletCaserne</servlet-name>
+        <url-pattern>/ServletCaserne/supprimerCaserne</url-pattern>
+    </servlet-mapping>
+
+    <!-- MAPPING POMPIERS -->
+    <servlet-mapping>
+        <servlet-name>PompierServlet</servlet-name>
+        <url-pattern>/PompierServlet/listePompiers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsulterPompier</servlet-name>
+        <url-pattern>/ConsulterPompier</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+</web-app>

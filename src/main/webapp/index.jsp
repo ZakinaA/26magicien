@@ -15,7 +15,7 @@
         </style>
     </head>
     <body>
-        <h1>?Système de Gestion Caserne</h1>
+        <h1>Système de Gestion Caserne</h1>
         <p>Bienvenue sur l'application de gestion. Choisissez une option :</p>
 
         <div class="menu-container">
