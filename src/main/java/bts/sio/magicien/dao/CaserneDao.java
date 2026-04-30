@@ -179,4 +179,31 @@ public class CaserneDao {
         c.setVille(rs.getString("ville"));
         return c;
     }
+    /**
+ * Supprime une caserne par son identifiant.
+ */
+public boolean supprimerCaserne(int idCaserne) {
+    Connection con = null;
+    PreparedStatement ps = null;
+    boolean ok = false;
+
+    String sql = "DELETE FROM caserne WHERE idCaserne = ?";
+    try {
+        con = ConnexionBdd.ouvrirConnexion();
+        ps = con.prepareStatement(sql);
+        ps.setInt(1, idCaserne);
+        
+        // executeUpdate renvoie le nombre de lignes supprimées
+        int nbLignes = ps.executeUpdate();
+        ok = (nbLignes > 0);
+        
+    } catch (SQLException e) {
+        System.err.println("[SDIS] Erreur supprimerCaserne : " + e.getMessage());
+    } finally {
+        // On utilise ta méthode utilitaire pour bien fermer
+        ConnexionBdd.fermerTout(null, ps, con);
+    }
+    return ok;
+}
+    
 }

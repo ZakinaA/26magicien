@@ -18,14 +18,12 @@
                     <th>Rue</th>
                     <th>Ville</th>
                     <th>Code Postal</th>
-                    <th colspan="2">Actions</th> <!-- Colonne pour les deux liens -->
+                    <th colspan="2">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <% 
-                    // Récupération de la liste transmise par la servlet
-                    List<Caserne> lesCasernes = (List<Caserne> ) request.getAttribute("mesCasernes");
-                    
+                    List<Caserne> lesCasernes = (List<Caserne>) request.getAttribute("mesCasernes");
                     if (lesCasernes != null && !lesCasernes.isEmpty()) {
                         for (Caserne c : lesCasernes) {
                 %>
@@ -36,10 +34,12 @@
                         <td><%= c.getVille() %></td>
                         <td><%= c.getCodePostal() %></td>
                         <td>
-                            <a href="ConsulterCaserne?id=<%= c.getIdCaserne() %>">Consulter</a>
+                            <!-- CORRECTION : URL alignée sur le web.xml -->
+                            <a href="${pageContext.request.contextPath}/ServletCaserne/consulterCaserne?id=<%= c.getIdCaserne() %>">Consulter</a>
                         </td>
                         <td>
-                            <a href="SupprimerCaserne?id=<%= c.getIdCaserne() %>" 
+                            <!-- CORRECTION : URL alignée sur le web.xml -->
+                            <a href="${pageContext.request.contextPath}/ServletCaserne/supprimerCaserne?id=<%= c.getIdCaserne() %>" 
                                onclick="return confirm('Confirmer la suppression ?');" 
                                style="color:red;">Supprimer</a>
                         </td>
@@ -49,14 +49,11 @@
                     } else {
                 %>
                     <tr>
-                        <td colspan="7" style="text-align: center;">Aucune donnée reçue de la servlet.</td>
+                        <td colspan="7" style="text-align: center;">Aucune donnée reçue.</td>
                     </tr>
                 <% } %>
             </tbody>
         </table>
-
-        <p>
-            <a href="${pageContext.request.contextPath}/index.html">Retour à l'accueil</a>
-        </p>
+        <p><a href="${pageContext.request.contextPath}/index.html">Retour à l'accueil</a></p>
     </body>
 </html>

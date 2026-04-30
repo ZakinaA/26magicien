@@ -5,14 +5,16 @@ import bts.sio.magicien.model.Caserne;
 import java.io.IOException;
 import java.util.List;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * Servlet pour piloter la consultation des casernes
+ * Servlet pour piloter les actions sur les casernes (Lister, Consulter, Supprimer)
  * @author Robin
  */
+@WebServlet(name = "ServletCaserne", urlPatterns = {"/ServletCaserne/*"})
 public class ServletCaserne extends HttpServlet {
 
     private CaserneDao caserneDao = new CaserneDao();
@@ -23,17 +25,35 @@ public class ServletCaserne extends HttpServlet {
         
         String url = request.getRequestURI();
         
-        // Mapping pour lister les casernes
+        // --- CAS 1 : LISTER ---
         if (url.contains("/ServletCaserne/listerCasernes")) {
             
-            // On récupère la liste via le DAO
             List<Caserne> lesCasernes = caserneDao.getToutesLesCasernes();
-            
-            // On la passe à la requête
             request.setAttribute("mesCasernes", lesCasernes);
             
-            // On appelle la vue (le fichier JSP)
             this.getServletContext().getRequestDispatcher("/vues/caserne/listerCasernes.jsp").forward(request, response);
+        } 
+        
+        // --- CAS 2 : CONSULTER ---
+        else if (url.contains("/ServletCaserne/consulterCaserne")) {
+            
+            // On récupère l'id passé dans l'URL (?id=X)
+            int id = Integer.parseInt(request.getParameter("id"));
+            Caserne laCaserne = caserneDao.getCaserneParId(id);
+            
+            request.setAttribute("laCaserne", laCaserne);
+            
+            this.getServletContext().getRequestDispatcher("/vues/caserne/consulterCaserne.jsp").forward(request, response);
+        }
+        
+        // --- CAS 3 : SUPPRIMER ---
+        else if (url.contains("/ServletCaserne/supprimerCaserne")) {
+            
+            int id = Integer.parseInt(request.getParameter("id"));
+            caserneDao.supprimerCaserne(id);
+            
+            // Après suppression, on redirige vers la liste
+            response.sendRedirect(request.getContextPath() + "/ServletCaserne/listerCasernes");
         }
     }
 
