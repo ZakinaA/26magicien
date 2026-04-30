@@ -29,6 +29,15 @@
         <url-pattern>/PompierServlet/listePompiers</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>InterventionServlet</servlet-name>
+        <servlet-class>bts.sio.magicien.servlet.InterventionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InterventionServlet</servlet-name>
+        <url-pattern>/InterventionServlet/listerInterventions</url-pattern>
+    </servlet-mapping>
+
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>

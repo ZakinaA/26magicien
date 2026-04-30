@@ -12,7 +12,7 @@
         
         <table border="1">
             <thead>
-                <tr>web.xml
+                <tr>
                     <th>ID</th>
                     <th>Nom</th>
                     <th>Rue</th>

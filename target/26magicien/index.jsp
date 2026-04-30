@@ -28,6 +28,11 @@
                 <h3>Pompiers</h3>
                 <p>Gérer le personnel pompier</p>
             </a>
+            
+            <a href="InterventionServlet/listerInterventions" class="card">
+                <h3>Interventions</h3>
+                <p>Gérer les Interventions</p>
+            </a>
         </div>
     </body>
 </html>
