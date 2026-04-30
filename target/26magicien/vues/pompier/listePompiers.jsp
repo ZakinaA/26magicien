@@ -36,7 +36,9 @@
         </tr>
     </c:forEach>
 </table>
-
+        <p>
+            <a href="${pageContext.request.contextPath}/">Retour à l'accueil</a>
+        </p>
 </body>
 </html>
 

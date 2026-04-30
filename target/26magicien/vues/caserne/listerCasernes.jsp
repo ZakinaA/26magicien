@@ -47,7 +47,7 @@
         </table>
 
         <p>
-            <a href="${pageContext.request.contextPath}/index.html">Retour à l'accueil</a>
+            <a href="${pageContext.request.contextPath}/">Retour à l'accueil</a>
         </p>
     </body>
 </html>
