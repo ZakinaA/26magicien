@@ -11,16 +11,16 @@ package bts.sio.magicien.model;
 public class Situation {
     
     private int id;
-    private Intervention intervention;
+    private int idIntervention;
     private String libelle;
     
     public Situation(){
         
     }
     
-    public Situation(int id, Intervention intervention, String libelle) {
+    public Situation(int id, int idIntervention, String libelle) {
         this.id = id;
-        this.intervention = intervention;
+        this.idIntervention = idIntervention;
         this.libelle = libelle;
     }
 
@@ -32,12 +32,12 @@ public class Situation {
         this.id = id;
     }
 
-    public Intervention getIntervention() {
-        return intervention;
+    public int getIdIntervention() {
+        return idIntervention;
     }
 
-    public void setIntervention(Intervention intervention) {
-        this.intervention = intervention;
+    public void setIdIntervention(int idIntervention) {
+        this.idIntervention = idIntervention;
     }
 
     public String getLibelle() {
