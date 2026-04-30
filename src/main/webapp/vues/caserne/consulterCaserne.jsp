@@ -7,29 +7,33 @@
     <head>
         <meta charset="UTF-8">
         <title>Détails de la Caserne</title>
-        <style>
-            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
-            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-            th { background-color: #f2f2f2; }
-        </style>
     </head>
     <body>
-        <h1>Détails de la caserne</h1>
+        <h1>Fiche descriptive de la caserne</h1>
         
         <%
-            // Récupération de la caserne
+            // Récupération de la caserne transmise par la Servlet
             Caserne c = (Caserne) request.getAttribute("laCaserne");
             if (c != null) {
         %>
-            <ul>
-                <li><strong>Nom :</strong> <%= c.getNom() %>[cite: 1]</li>
-                <li><strong>Adresse :</strong> <%= c.getRue() %>[cite: 1]</li>
-                <li><strong>Ville :</strong> <%= c.getVille() %> (<%= c.getCodePostal() %>)[cite: 1]</li>
-            </ul>
+            <!-- Tableau des informations générales -->
+            <table border="1">
+                <tr>
+                    <th>Nom de la caserne</th>
+                    <td><%= c.getNom() %></td>
+                </tr>
+                <tr>
+                    <th>Adresse</th>
+                    <td><%= c.getRue() %></td>
+                </tr>
+                <tr>
+                    <th>Ville</th>
+                    <td><%= c.getVille() %> (<%= c.getCodePostal() %>)</td>
+                </tr>
+            </table>
 
-            <hr>
             <h2>Personnel affecté</h2>
-            <table>
+            <table border="1">
                 <thead>
                     <tr>
                         <th>Nom</th>
@@ -40,20 +44,19 @@
                 </thead>
                 <tbody>
                     <%
-                        // Récupération de la liste typée Object
+                        // Récupération de la liste des pompiers
                         List<Object> sesPompiers = (List<Object>) request.getAttribute("sesPompiers");
                         
                         if (sesPompiers != null && !sesPompiers.isEmpty()) {
                             for (Object obj : sesPompiers) {
-                                // On vérifie si l'objet est bien un Pompier avant de l'afficher
                                 if (obj instanceof Pompier) {
                                     Pompier p = (Pompier) obj;
                     %>
                         <tr>
-                            <td><%= p.getNom() %>[cite: 1]</td>
-                            <td><%= p.getPrenom() %>[cite: 1]</td>
-                            <td><%= p.getType() %>[cite: 1]</td>
-                            <td><%= p.getStatut() %>[cite: 1]</td>
+                            <td><%= p.getNom() %></td>
+                            <td><%= p.getPrenom() %></td>
+                            <td><%= p.getType() %></td>
+                            <td><%= p.getStatut() %></td>
                         </tr>
                     <% 
                                 }
@@ -61,19 +64,22 @@
                         } else { 
                     %>
                         <tr>
-                            <td colspan="4" style="text-align: center;">Aucun pompier affecté à cette caserne.</td>
+                            <td colspan="4" align="center">
+                                Aucun pompier n'est actuellement affecté à cette caserne.
+                            </td>
                         </tr>
                     <% } %>
                 </tbody>
             </table>
 
         <% } else { %>
-            <p style="color:red;">Erreur : Aucune donnée de caserne n'a été transmise.</p>
+            <p><strong>Erreur :</strong> Impossible de charger les données de la caserne.</p>
         <% } %>
 
-        <hr>
         <p>
-            <a href="${pageContext.request.contextPath}/ServletCaserne/listerCasernes">Retour à la liste</a>
+            <a href="${pageContext.request.contextPath}/ServletCaserne/listerCasernes">
+                ← Retour à la liste des casernes
+            </a>
         </p>
     </body>
 </html>
