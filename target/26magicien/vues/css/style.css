@@ -20,6 +20,8 @@ body {
     padding: 2rem 2.5rem;
 }
 
+/* ───── HEADER ───── */
+
 .page-header {
     display: flex;
     align-items: center;
@@ -47,6 +49,8 @@ body {
     background-color: #c0000a;
     margin-bottom: 1.5rem;
 }
+
+/* ───── TABLEAU LISTE ───── */
 
 .table-wrap {
     background: #fff;
@@ -93,6 +97,8 @@ tbody td {
     vertical-align: middle;
 }
 
+/* ───── COULEURS COLONNES ───── */
+
 td.id-col {
     color: #1a6bbf;
     font-weight: 600;
@@ -128,6 +134,17 @@ td.bip-col {
     color: #555;
 }
 
+/* ───── LIGNE VIDE ───── */
+
+.empty-row td {
+    padding: 2rem 16px;
+    color: #aaa;
+    font-style: italic;
+    text-align: center;
+}
+
+/* ───── BOUTON DÉTAIL ───── */
+
 .btn-detail {
     display: inline-block;
     padding: 5px 14px;
@@ -146,6 +163,8 @@ td.bip-col {
     background: #c0000a;
     color: #fff;
 }
+
+/* ───── LIEN RETOUR ───── */
 
 .back-link {
     display: inline-flex;
@@ -167,9 +186,60 @@ td.bip-col {
     color: #1a1a1a;
 }
 
-.empty-row td {
-    padding: 2rem 16px;
-    color: #aaa;
-    font-style: italic;
-    text-align: center;
+/* ───── FICHE DÉTAIL CASERNE ───── */
+
+.fiche-table {
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.fiche-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.fiche-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    color: #555;
+    background: #f7f7f7;
+    border-bottom: 1px solid #e8e8e8;
+    width: 35%;
+}
+
+.fiche-table td {
+    padding: 12px 16px;
+    color: #1a1a1a;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.fiche-table tr:last-child th,
+.fiche-table tr:last-child td {
+    border-bottom: none;
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+/* ───── MESSAGE ERREUR ───── */
+
+.error-msg {
+    background: #fff0f0;
+    border: 1px solid #f5c0c0;
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    color: #c0000a;
+    font-size: 14px;
+    max-width: 600px;
 }
