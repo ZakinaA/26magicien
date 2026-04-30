@@ -54,6 +54,13 @@
                 <% } %>
             </tbody>
         </table>
+<<<<<<< HEAD
         <p><a href="${pageContext.request.contextPath}/index.html">Retour à l'accueil</a></p>
+=======
+
+        <p>
+            <a href="${pageContext.request.contextPath}/">Retour à l'accueil</a>
+        </p>
+>>>>>>> 5c9e24764ddb9866806e81f134333fb7b98014a9
     </body>
 </html>
