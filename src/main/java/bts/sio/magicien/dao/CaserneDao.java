@@ -6,6 +6,7 @@ package bts.sio.magicien.dao;
 
 import bts.sio.magicien.model.Caserne;
 import bts.sio.magicien.model.Engin;
+import bts.sio.magicien.model.Pompier;
 import bts.sio.magicien.util.ConnexionBdd;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -204,6 +205,44 @@ public boolean supprimerCaserne(int idCaserne) {
         ConnexionBdd.fermerTout(null, ps, con);
     }
     return ok;
+}
+
+public List<Object> getLesPompiers(int idCaserne) {
+    List<Object> lesPompiers = new ArrayList<>();
+    Connection cnx = null;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+
+    try {
+        // CORRECTION : On utilise ouvrirConnexion() comme dans ta méthode qui marche
+        cnx = ConnexionBdd.ouvrirConnexion(); 
+        
+        // Requête SQL pour filtrer par caserne
+        String sql = "SELECT * FROM pompier WHERE idCaserne = ?";
+        ps = cnx.prepareStatement(sql);
+        ps.setInt(1, idCaserne);
+        rs = ps.executeQuery();
+
+        while (rs.next()) {
+            Pompier p = new Pompier();
+            p.setIdPompier(rs.getInt("idPompier"));
+            p.setNom(rs.getString("nom"));
+            p.setPrenom(rs.getString("prenom"));
+            p.setType(rs.getString("type"));
+            // Utilise p.setStatut uniquement si ton modèle Pompier possède cette méthode
+            p.setStatut(rs.getString("statut")); 
+            
+            lesPompiers.add(p);
+        }
+    } catch (SQLException e) {
+        System.err.println("[SDIS] Erreur getLesPompiers : " + e.getMessage());
+    } finally {
+        // On ferme proprement les ressources
+        ConnexionBdd.fermer(rs);
+        ConnexionBdd.fermer(ps);
+        ConnexionBdd.fermer(cnx);
+    }
+    return lesPompiers;
 }
     
 }

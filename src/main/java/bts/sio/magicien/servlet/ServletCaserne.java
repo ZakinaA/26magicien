@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(name = "ServletCaserne", urlPatterns = {"/ServletCaserne/*"})
 public class ServletCaserne extends HttpServlet {
 
-    private CaserneDao caserneDao = new CaserneDao();
+    private final CaserneDao caserneDao = new CaserneDao();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -37,11 +37,18 @@ public class ServletCaserne extends HttpServlet {
         // --- CAS 2 : CONSULTER ---
         else if (url.contains("/ServletCaserne/consulterCaserne")) {
             
-            // On récupère l'id passé dans l'URL (?id=X)
+            // 1. On récupère l'id passé dans l'URL (?id=X)
             int id = Integer.parseInt(request.getParameter("id"));
+            
+            // 2. On récupère les infos de la caserne
             Caserne laCaserne = caserneDao.getCaserneParId(id);
             
+            // 3. On récupère la liste des pompiers de cette caserne
+            List<Object> lesPompiers = caserneDao.getLesPompiers(id);
+            
+            // 4. On passe les données à la JSP[cite: 1]
             request.setAttribute("laCaserne", laCaserne);
+            request.setAttribute("sesPompiers", lesPompiers);
             
             this.getServletContext().getRequestDispatcher("/vues/caserne/consulterCaserne.jsp").forward(request, response);
         }
@@ -60,6 +67,7 @@ public class ServletCaserne extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        // Redirige les requêtes POST vers le doGet pour centraliser la logique
         doGet(request, response);
     }
 }
