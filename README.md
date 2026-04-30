@@ -119,3 +119,72 @@ http://localhost:8080/26magicien/
 ## Auteurs
 
 Projet réalisé par l'équipe **Magicien** dans le cadre du **BTS SIO** composé de Ali SANGARE, Arda ALAN, Gabin HERVE, Robin BARETTE.
+
+## Important — Informations
+
+### Base de données
+- Utiliser des types numériques lorsque c'est pertinent  
+  (ex : listes, données quantitatives, identifiants, etc.)
+
+---
+
+### UX (Expérience utilisateur)
+- Parcours utilisateur :
+  1. Accueil
+  2. Liste (affichage en tableau)
+  3. Détail (affichage vertical)
+
+---
+
+### Ajout / Modification
+- Les formulaires doivent respecter un format identique  
+  → cohérence entre création et édition
+
+---
+
+### Authentification
+- Login → Page d’accueil
+- Afficher directement les informations importantes  
+  → éviter les messages inutiles (ex : "Bonjour...")
+
+---
+
+### User Stories
+- Chaque user story doit inclure :
+  - Score de complexité
+  - Priorité
+- À appliquer notamment sur le CRUD
+
+---
+
+### Suppression des données
+- Pas de suppression physique (contraintes de clés étrangères)
+- Mettre en place un système d’archivage :
+  - Champ : `0` (archivé) / `1` (actif)
+  - Les données avec `0` ne doivent plus être visibles dans les vues
+
+---
+
+## Compétences à acquérir en fin de 1ère année
+
+### Modélisation
+- Savoir concevoir un diagramme de classes associé
+
+### Programmation orientée objet
+- Implémenter des classes métier
+- Gérer les relations :
+  - One-to-Many (1 → N)
+  - Many-to-One (N → 1)
+  - Many-to-Many (N ↔ N)
+
+### Base de données et accès aux données
+- DAO (Data Access Object)
+- Requêtes SQL
+- Vues SQL
+
+### Architecture logicielle
+- Comprendre et appliquer le modèle MVC
+
+### Outils
+- Git
+- GitHub
