@@ -7,15 +7,6 @@
     <head>
         <meta charset="UTF-8">
         <title>Détails de la Caserne</title>
-        <style>
-            body { font-family: Arial, sans-serif; margin: 20px; }
-            table { border-collapse: collapse; width: 100%; margin-top: 10px; margin-bottom: 30px; }
-            th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-            th { background-color: #f2f2f2; width: 25%; }
-            .header-table th { background-color: #e74c3c; color: white; }
-            .pompier-table th { background-color: #34495e; color: white; }
-            tr:nth-child(even) { background-color: #f9f9f9; }
-        </style>
     </head>
     <body>
         <h1>Fiche descriptive de la caserne</h1>
@@ -26,7 +17,7 @@
             if (c != null) {
         %>
             <!-- Tableau des informations générales -->
-            <table class="header-table">
+            <table border="1">
                 <tr>
                     <th>Nom de la caserne</th>
                     <td><%= c.getNom() %></td>
@@ -42,7 +33,7 @@
             </table>
 
             <h2>Personnel affecté</h2>
-            <table class="pompier-table">
+            <table border="1">
                 <thead>
                     <tr>
                         <th>Nom</th>
@@ -73,7 +64,7 @@
                         } else { 
                     %>
                         <tr>
-                            <td colspan="4" style="text-align: center; font-style: italic;">
+                            <td colspan="4" align="center">
                                 Aucun pompier n'est actuellement affecté à cette caserne.
                             </td>
                         </tr>
@@ -82,12 +73,10 @@
             </table>
 
         <% } else { %>
-            <div style="padding: 20px; background-color: #fee; border: 1px solid red; color: red;">
-                <strong>Erreur :</strong> Impossible de charger les données de la caserne.
-            </div>
+            <p><strong>Erreur :</strong> Impossible de charger les données de la caserne.</p>
         <% } %>
 
-        <p style="margin-top: 20px;">
+        <p>
             <a href="${pageContext.request.contextPath}/ServletCaserne/listerCasernes">
                 ← Retour à la liste des casernes
             </a>
