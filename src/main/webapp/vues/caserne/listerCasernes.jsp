@@ -46,7 +46,7 @@
                 <td class="cp-col"><%= c.getCodePostal() %></td>
                 <td class="ville-col"><%= c.getVille() %></td>
                 <td>
-                    <a class="btn-detail" href="${pageContext.request.contextPath}/caserne/detail?id=<%= c.getIdCaserne() %>">Détail</a>
+                    <a class="btn-detail" href="<%= request.getContextPath() %>/caserne/detail?id=<%= c.getIdCaserne() %>">Détail</a>
                 </td>
             </tr>
             <%

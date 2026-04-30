@@ -86,4 +86,35 @@ public class PompierDao {
         p.setIdCaserne(rs.getInt("idCaserne"));
         return p;
     }
-}
+    
+public Pompier getPompierById(int id) {
+    Pompier unPompier = null;
+    Connection con = null;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+
+    // On utilise "idPompier" car c'est le nom dans ton mapper
+    String sql = "SELECT * FROM pompier WHERE idPompier = ?"; 
+    
+    try {
+        // CORRECTION : On utilise TA méthode de connexion
+        con = ConnexionBdd.ouvrirConnexion(); 
+        
+        ps = con.prepareStatement(sql);
+        ps.setInt(1, id);
+        rs = ps.executeQuery();
+
+        if (rs.next()) {
+            // On utilise ton mapper existant pour remplir l'objet
+            unPompier = mapperPompier(rs); 
+        }
+    } catch (SQLException e) {
+        System.err.println("[SDIS] Erreur getPompierById : " + e.getMessage());
+        e.printStackTrace();
+    } finally {
+        // On ferme tout proprement avec ta méthode utilitaire
+        ConnexionBdd.fermerTout(rs, ps, con); 
+    }
+
+    return unPompier;
+}}
