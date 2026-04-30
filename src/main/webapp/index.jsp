@@ -1,60 +1,33 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.util.List"%>
-<%@page import="bts.sio.magicien.model.Caserne"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>Liste des Casernes</title>
+        <title>Accueil - Gestion Pompier</title>
+        <style>
+            body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
+            .menu-container { display: flex; justify-content: center; gap: 20px; }
+            .card { 
+                border: 1px solid #ccc; padding: 20px; border-radius: 8px; 
+                width: 200px; text-decoration: none; color: black; background: #f9f9f9;
+            }
+            .card:hover { background: #e0e0e0; border-color: #d32f2f; }
+            h1 { color: #d32f2f; }
+        </style>
     </head>
     <body>
-        <h1>Liste des Casernes</h1>
-        
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nom</th>
-                    <th>Rue</th>
-                    <th>Ville</th>
-                    <th>Code Postal</th>
-                    <th colspan="2">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% 
-                    List<Caserne> lesCasernes = (List<Caserne>) request.getAttribute("mesCasernes");
-                    if (lesCasernes != null && !lesCasernes.isEmpty()) {
-                        for (Caserne c : lesCasernes) {
-                %>
-                    <tr>
-                        <td><%= c.getIdCaserne() %></td>
-                        <td><%= c.getNom() %></td>
-                        <td><%= c.getRue() %></td>
-                        <td><%= c.getVille() %></td>
-                        <td><%= c.getCodePostal() %></td>
-                        <td>
-                            <!-- CORRECTION : URL alignée sur le web.xml -->
-                            <a href="${pageContext.request.contextPath}/ServletCaserne/consulterCaserne?id=<%= c.getIdCaserne() %>">Consulter</a>
-                        </td>
-                        <td>
-                            <!-- CORRECTION : URL alignée sur le web.xml -->
-                            <a href="${pageContext.request.contextPath}/ServletCaserne/supprimerCaserne?id=<%= c.getIdCaserne() %>" 
-                               onclick="return confirm('Confirmer la suppression ?');" 
-                               style="color:red;">Supprimer</a>
-                        </td>
-                    </tr>
-                <% 
-                        }
-                    } else {
-                %>
-                    <tr>
-                        <td colspan="7" style="text-align: center;">Aucune donnée reçue.</td>
-                    </tr>
-                <% } %>
-            </tbody>
-        </table>
-        <p><a href="${pageContext.request.contextPath}/index.html">Retour à l'accueil</a></p>
+        <h1>Système de Gestion Caserne</h1>
+        <p>Bienvenue sur l'application de gestion. Choisissez une option :</p>
 
+        <div class="menu-container">
+            <a href="ServletCaserne/listerCasernes" class="card">
+                <h3>Casernes</h3>
+                <p>Consulter la liste des casernes</p>
+            </a>
+
+            <a href="PompierServlet/listePompiers" class="card">
+                <h3>Pompiers</h3>
+                <p>Gérer le personnel pompier</p>
+            </a>
+        </div>
     </body>
 </html>
