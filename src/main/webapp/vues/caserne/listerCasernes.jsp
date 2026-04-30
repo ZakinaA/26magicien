@@ -12,20 +12,21 @@
         
         <table border="1">
             <thead>
-                <tr>web.xml
+                <tr>
                     <th>ID</th>
                     <th>Nom</th>
                     <th>Rue</th>
                     <th>Ville</th>
                     <th>Code Postal</th>
+                    <th colspan="2">Actions</th> <!-- Colonne pour les deux liens -->
                 </tr>
             </thead>
             <tbody>
                 <% 
                     // Récupération de la liste transmise par la servlet
-                    List<Caserne> lesCasernes = (List<Caserne>) request.getAttribute("mesCasernes");
+                    List<Caserne> lesCasernes = (List<Caserne> ) request.getAttribute("mesCasernes");
                     
-                    if (lesCasernes != null) {
+                    if (lesCasernes != null && !lesCasernes.isEmpty()) {
                         for (Caserne c : lesCasernes) {
                 %>
                     <tr>
@@ -34,13 +35,21 @@
                         <td><%= c.getRue() %></td>
                         <td><%= c.getVille() %></td>
                         <td><%= c.getCodePostal() %></td>
+                        <td>
+                            <a href="ConsulterCaserne?id=<%= c.getIdCaserne() %>">Consulter</a>
+                        </td>
+                        <td>
+                            <a href="SupprimerCaserne?id=<%= c.getIdCaserne() %>" 
+                               onclick="return confirm('Confirmer la suppression ?');" 
+                               style="color:red;">Supprimer</a>
+                        </td>
                     </tr>
                 <% 
                         }
                     } else {
                 %>
                     <tr>
-                        <td colspan="5">Aucune donnée reçue de la servlet.</td>
+                        <td colspan="7" style="text-align: center;">Aucune donnée reçue de la servlet.</td>
                     </tr>
                 <% } %>
             </tbody>
